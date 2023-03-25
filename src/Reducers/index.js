@@ -1,3 +1,5 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
     userList: [],
     loggedinUser: null,
@@ -9,7 +11,7 @@ const userSlice = createSlice({
     reducers: {
       signUp: (state, action) => {
         // state.users.push(action.payload);
-        userList: [...state.userList, action.payload]
+        state.userList = [...state.userList, action.payload]
       },
       login: (state, action) => {
         state.currentUser = action.payload;
